@@ -8,5 +8,6 @@ pluginManagement {
     mavenCentral()
     gradlePluginPortal()
     maven("https://cache-redirector.jetbrains.com/kotlin.bintray.com/kotlin-plugin")
+    maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-ide")
   }
 }
