@@ -42,15 +42,17 @@ val copyJSDependencies by tasks.creating(Copy::class) {
 plugins {
     id("org.springframework.boot") version "2.4.2"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    kotlin("jvm") version "1.4.30-RC-232"
-    kotlin("plugin.spring") version "1.4.30-RC-232"
+    kotlin("jvm") version "1.4.30-RC"
+    kotlin("plugin.spring") version "1.4.30-RC"
 }
 
 allprojects {
     repositories {
         mavenCentral()
-        maven("https://cache-redirector.jetbrains.com/kotlin.bintray.com/kotlin-plugin")
         maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-ide")
+        maven("https://kotlin.bintray.com/kotlin-ide-plugin-dependencies")
+        maven("https://jetbrains.bintray.com/intellij-third-party-dependencies")
+//        maven("https://cache-redirector.jetbrains.com/kotlin.bintray.com/kotlin-plugin")
     }
     afterEvaluate {
         dependencies {
@@ -86,8 +88,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-compiler:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-script-runtime:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-js:$kotlinVersion")
-    implementation("org.jetbrains.kotlin:ide-common-ij202:$kotlinVersion")
-    implementation("org.jetbrains.kotlin:kotlin-plugin-ij202:$kotlinVersion") {
+    implementation("org.jetbrains.kotlin:common:202-$kotlinVersion-IJ8194.7")
+    implementation("org.jetbrains.kotlin:idea:202-$kotlinVersion-IJ8194.7") {
         isTransitive = false
     }
     implementation(project(":executors", configuration = "default"))

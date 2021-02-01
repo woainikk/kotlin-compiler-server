@@ -9,7 +9,7 @@ plugins {
 
 dependencies {
     implementation(project(":common", configuration = "default"))
-    implementation("org.jetbrains.kotlin:kotlin-plugin-ij202:$kotlinVersion") {
+    implementation("org.jetbrains.kotlin:idea:202-$kotlinVersion-IJ8194.7") {
         isTransitive = false
     }
 }
